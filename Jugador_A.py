@@ -10,9 +10,6 @@ msg, _ = conexion.recvfrom(1024)
 jugador_info = msg.decode()
 print("Conectado como", jugador_info)
 
-# -------------------------------------------------------
-# COLOCAR BARCOS
-# -------------------------------------------------------
 while True:
     msg, _ = conexion.recvfrom(4096)
     if msg.decode() == "TURNO_COLOCAR":
@@ -35,13 +32,9 @@ for tipo in barcos_disponibles:
             colocado = True
         else:
             print(resp)
-        # Mostrar mapas
         mapa, _ = conexion.recvfrom(4096)
         print(mapa.decode())
 
-# -------------------------------------------------------
-# TURNO DE ATAQUE
-# -------------------------------------------------------
 while True:
     msg, _ = conexion.recvfrom(4096)
     if msg.decode() == "TU_TURNO":

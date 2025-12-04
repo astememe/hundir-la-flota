@@ -4,8 +4,6 @@ class Barco:
         self.__longitud = self.longitud(tipo)
         self.__vida = self.__longitud
         self.__coords = []
-        # self.__coords = [[] for _ in range(self.longitud(tipo))]
-
 
     @staticmethod
     def longitud(tipo: str):
