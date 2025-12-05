@@ -10,10 +10,11 @@ msg, _ = conexion.recvfrom(1024)
 jugador_info = msg.decode()
 print("Conectado como", jugador_info)
 
-while True:
+cambio_turno = False
+while not cambio_turno:
     msg, _ = conexion.recvfrom(4096)
     if msg.decode() == "TURNO_COLOCAR":
-        break
+        cambio_turno = True
 
 barcos_disponibles = ['portaviones', 'acorazado', 'destructor', 'fragata']
 
